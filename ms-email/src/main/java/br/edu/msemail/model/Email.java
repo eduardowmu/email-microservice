@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.persistence.criteria.From;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 public class Email implements Serializable {
@@ -13,7 +14,7 @@ public class Email implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    private UUID id;
     private String ownerRef;
     private String emailFrom;
     private String emailTo;
@@ -23,11 +24,11 @@ public class Email implements Serializable {
     private LocalDateTime sendDateEmail;
     private StatusEmail statusEmail;
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
